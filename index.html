@@ -1,234 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مستهدف المليون</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0f172a">
-    <link rel="apple-touch-icon" href="icon.png">
-    
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <!-- الأيقونة التقليدية للمتصفحات القديمة وعلامات التبويب -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- الأيقونات الحديثة بمقاسات مختلفة للمتصفحات المتقدمة -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- الأيقونة الخاصة بهواتف الآيفون (iOS) عند إضافة التطبيق للشاشة الرئيسية -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
     <!-- خط القاهرة بجودة عالية -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #3b82f6;
-            --accent: #10b981;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-            --dot-empty: #334155;
-        }
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --primary: #3b82f6;
+        --accent: #10b981;
+        --text-main: #ffffff;
+        --text-muted: #94a3b8;
+        --dot-empty: #334155;
+      }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-            
-            /* إجبار الأرقام القياسية العربية */
-            font-variant-numeric: lining-nums;
-            -webkit-font-feature-settings: "lnum";
-            font-feature-settings: "lnum";
-        }
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: var(--card-bg);
+        color: var(--text-main);
+        margin: 0;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
 
-        .container {
-            width: 100%;
-            max-width: 440px;
-            background: var(--card-bg);
-            padding: 30px 25px;
-            border-radius: 16px;
-            text-align: center;
-            box-sizing: border-box;
-        }
+        /* إجبار الأرقام القياسية العربية */
+        font-variant-numeric: lining-nums;
+        -webkit-font-feature-settings: "lnum";
+        font-feature-settings: "lnum";
+      }
 
-        /* صندوق العبارات الإسلامية */
-        .quote-box {
-            background: #111827;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border-right: 4px solid var(--accent);
-            font-size: 0.9rem;
-            color: #e2e8f0;
-            margin-bottom: 25px;
-            text-align: right;
-            line-height: 1.6;
-        }
+      .container {
+        width: 100%;
+        max-width: 440px;
+        background: var(--card-bg);
+        padding: 30px 25px;
+        border-radius: 16px;
+        text-align: center;
+        box-sizing: border-box;
+      }
 
-        .target-header {
-            margin-bottom: 20px;
-        }
+      /* صندوق العبارات الإسلامية */
+      .quote-box {
+        background: #111827;
+        padding: 12px 15px;
+        border-radius: 8px;
+        border-right: 4px solid var(--accent);
+        font-size: 0.9rem;
+        color: #e2e8f0;
+        margin-bottom: 25px;
+        text-align: right;
+        line-height: 1.6;
+      }
 
-        .target-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
+      .target-header {
+        margin-bottom: 20px;
+      }
 
-        .target-value {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--accent);
-            margin-top: 2px;
-        }
+      .target-label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
 
-        .progress-hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 15px;
-            padding: 0 5px;
-        }
+      .target-value {
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--accent);
+        margin-top: 2px;
+      }
 
-        .amount-display {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: var(--primary);
-            line-height: 1;
-            text-align: right;
-        }
+      .progress-hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 15px;
+        padding: 0 5px;
+      }
 
-        .amount-display span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            display: block;
-            margin-top: 5px;
-        }
+      .amount-display {
+        font-size: 2.6rem;
+        font-weight: 900;
+        color: var(--primary);
+        line-height: 1;
+        text-align: right;
+      }
 
-        .percentage-badge {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--text-main);
-            background: #111827;
-            padding: 6px 12px;
-            border-radius: 8px;
-            line-height: 1.2;
-        }
+      .amount-display span {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-weight: 400;
+        display: block;
+        margin-top: 5px;
+      }
 
-        /* شبكة الـ 500 دائرة مكثفة للمتابعة الدقيقة */
-        .dots-grid {
-            display: grid;
-            grid-template-columns: repeat(20, 1fr); /* 20 عمود بدلاً من 10 */
-            gap: 4px;
-            background: #111827;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
+      .percentage-badge {
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--text-main);
+        background: #111827;
+        padding: 6px 12px;
+        border-radius: 8px;
+        line-height: 1.2;
+      }
 
-        .dot {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: var(--dot-empty);
-            border-radius: 50%;
-        }
+      /* شبكة الـ 500 دائرة مكثفة للمتابعة الدقيقة */
+      .dots-grid {
+        display: grid;
+        grid-template-columns: repeat(20, 1fr); /* 20 عمود بدلاً من 10 */
+        gap: 4px;
+        background: #111827;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }
 
-        .dot.active {
-            background-color: var(--accent);
-        }
+      .dot {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--dot-empty);
+        border-radius: 50%;
+      }
 
-        /* أدوات الإدخال */
-        .input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+      .dot.active {
+        background-color: var(--accent);
+      }
 
-        input[type="number"] {
-            flex: 1;
-            padding: 14px;
-            border: 2px solid #475569;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            background: #111827;
-            color: var(--text-main);
-            outline: none;
-            text-align: center;
-        }
+      /* أدوات الإدخال */
+      .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
 
-        input[type="number"]:focus {
-            border-color: var(--primary);
-        }
+      input[type="number"] {
+        flex: 1;
+        padding: 14px;
+        border: 2px solid #475569;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-family: "Cairo", sans-serif;
+        font-weight: 700;
+        background: #111827;
+        color: var(--text-main);
+        outline: none;
+        text-align: center;
+      }
 
-        button {
-            font-family: 'Cairo', sans-serif;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
+      input[type="number"]:focus {
+        border-color: var(--primary);
+      }
 
-        .btn-add {
-            background-color: var(--primary);
-            color: white;
-            padding: 0 30px;
-        }
+      button {
+        font-family: "Cairo", sans-serif;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
 
-        .btn-add:active {
-            background-color: #2563eb;
-        }
+      .btn-add {
+        background-color: var(--primary);
+        color: white;
+        padding: 0 30px;
+      }
 
-        .btn-reset {
-            background: transparent;
-            color: #ef4444;
-            font-size: 0.85rem;
-            opacity: 0.5;
-        }
+      .btn-add:active {
+        background-color: #2563eb;
+      }
 
-        .btn-reset:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
+      .btn-reset {
+        background: transparent;
+        color: #ef4444;
+        font-size: 0.85rem;
+        opacity: 0.5;
+      }
+
+      .btn-reset:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quote-box" id="quoteBox">💡 جاري استحضار النية...</div>
 
-<div class="container">
-    <div class="quote-box" id="quoteBox">💡 جاري استحضار النية...</div>
-
-    <div class="target-header">
+      <div class="target-header">
         <div class="target-label">الهدف المالي المستهدف</div>
         <div class="target-value">1,000,000 ل.س</div>
-    </div>
-    
-    <div class="progress-hero">
-        <div class="amount-display" id="currentAmount">0
-            <span>ليرة سورية مجموعة</span>
+      </div>
+
+      <div class="progress-hero">
+        <div class="amount-display" id="currentAmount">
+          0
+          <span>ليرة سورية مجموعة</span>
         </div>
         <div class="percentage-badge" id="progressPercent">0.0%</div>
-    </div>
+      </div>
 
-    <!-- شبكة الدوائر المكثفة (500 دائرة) -->
-    <div class="dots-grid" id="dotsGrid"></div>
+      <!-- شبكة الدوائر المكثفة (500 دائرة) -->
+      <div class="dots-grid" id="dotsGrid"></div>
 
-    <div class="input-group">
-        <input type="number" id="amountInput" placeholder="أدخل المبلغ المضاف..." min="1">
+      <div class="input-group">
+        <input
+          type="number"
+          id="amountInput"
+          placeholder="أدخل المبلغ المضاف..."
+          min="1"
+        />
         <button class="btn-add" onclick="addAmount()">إضافة</button>
+      </div>
+
+      <button class="btn-reset" onclick="resetAmount()">
+        إعادة تعيين العداد
+      </button>
     </div>
 
-    <button class="btn-reset" onclick="resetAmount()">إعادة تعيين العداد</button>
-</div>
+    <script>
+      const TARGET = 1000000;
+      const TOTAL_DOTS = 500; // تم زيادة عدد الدوائر لتقدم أدق
+      let currentSaved = parseFloat(localStorage.getItem("savedAmount")) || 0;
 
-<script>
-    const TARGET = 1000000;
-    const TOTAL_DOTS = 500; // تم زيادة عدد الدوائر لتقدم أدق
-    let currentSaved = parseFloat(localStorage.getItem('savedAmount')) || 0;
-
-    const islamicQuotes = [
+      const islamicQuotes = [
         "«وَأَن لَّيْسَ لِلْإِنسَانِ إِلَّا مَا سَعَىٰ» - تذكّر أن السعي عليك والبركة من الله.",
         "«مَا نَقَصَتْ مَالُ عَبْدٍ مِنْ صَدَقَةٍ» - اجعل لِهدفِك نصيباً من البركة ليربو وينمو.",
         "«احْرِصْ عَلَى مَا يَنْفَعُكَ وَاسْتَعِنْ بِاللَّهِ» - خطوة بخطوة يقترب المستحيل.",
@@ -236,74 +256,77 @@
         "قليلٌ دائم خيرٌ من كثيرٍ منقطع.. تابع مسيرك وثق بفضل الله.",
         "إنما يُنال الرزق بالسعي؛ تذكر نيتك الطيبة في تأمين هذا المبلغ وتوكل على الرزاق.",
         "«وَفِي السَّمَاءِ رِزْقُكُمْ وَمَا تُوعَدُونَ» - اعمل بالأسباب واطمئن لتدبير الله.",
-        "من سار على الدرب بالاستعانة بالله وصل، المليون يبدأ بليرة."
-    ];
+        "من سار على الدرب بالاستعانة بالله وصل، المليون يبدأ بليرة.",
+      ];
 
-    function displayRandomQuote() {
+      function displayRandomQuote() {
         const randomIndex = Math.floor(Math.random() * islamicQuotes.length);
-        document.getElementById('quoteBox').innerText = islamicQuotes[randomIndex];
-    }
+        document.getElementById("quoteBox").innerText =
+          islamicQuotes[randomIndex];
+      }
 
-    // توليد 500 دائرة صغيرة ديناميكياً
-    const dotsGrid = document.getElementById('dotsGrid');
-    for (let i = 0; i < TOTAL_DOTS; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
+      // توليد 500 دائرة صغيرة ديناميكياً
+      const dotsGrid = document.getElementById("dotsGrid");
+      for (let i = 0; i < TOTAL_DOTS; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
         dotsGrid.appendChild(dot);
-    }
+      }
 
-    displayRandomQuote();
-    updateUI();
+      displayRandomQuote();
+      updateUI();
 
-    function updateUI() {
-        document.getElementById('currentAmount').innerHTML = currentSaved.toLocaleString('en-US') + " <span>ليرة سورية مجموعة</span>";
-        
+      function updateUI() {
+        document.getElementById("currentAmount").innerHTML =
+          currentSaved.toLocaleString("en-US") +
+          " <span>ليرة سورية مجموعة</span>";
+
         // حساب النسبة المئوية بدقة منزلة عشرية واحدة لتظهر الأجزاء من 1%
         let percent = (currentSaved / TARGET) * 100;
         if (percent > 100) percent = 100;
-        
-        document.getElementById('progressPercent').innerText = percent.toFixed(1) + '%';
-        
+
+        document.getElementById("progressPercent").innerText =
+          percent.toFixed(1) + "%";
+
         // حساب عدد الدوائر المضاءة بناءً على النسبة من الـ 500 دائرة
         let dotsToActivate = Math.floor((percent / 100) * TOTAL_DOTS);
-        
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            if (index < dotsToActivate) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-        
-        localStorage.setItem('savedAmount', currentSaved);
-    }
 
-    function addAmount() {
-        const input = document.getElementById('amountInput');
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          if (index < dotsToActivate) {
+            dot.classList.add("active");
+          } else {
+            dot.classList.remove("active");
+          }
+        });
+
+        localStorage.setItem("savedAmount", currentSaved);
+      }
+
+      function addAmount() {
+        const input = document.getElementById("amountInput");
         const value = parseFloat(input.value);
 
         if (!isNaN(value) && value > 0) {
-            currentSaved += value;
-            updateUI();
-            input.value = '';
-            input.focus();
+          currentSaved += value;
+          updateUI();
+          input.value = "";
+          input.focus();
         }
-    }
+      }
 
-    function resetAmount() {
-        if (confirm('هل أنت متأكد من تصفير العداد والبدء من جديد؟')) {
-            currentSaved = 0;
-            updateUI();
+      function resetAmount() {
+        if (confirm("هل أنت متأكد من تصفير العداد والبدء من جديد؟")) {
+          currentSaved = 0;
+          updateUI();
         }
-    }
+      }
 
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js');
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js");
         });
-    }
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>

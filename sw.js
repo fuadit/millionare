@@ -2,7 +2,12 @@ const CACHE_NAME = 'target-tracker-v1';
 const ASSETS = [
   './index.html',
   './manifest.json',
-  './icon.png'
+  './favicon.ico',
+  './favicon-16x16.png',
+  './favicon-32x32.png',
+  './apple-touch-icon.png',
+  './android-chrome-192x192.png',
+  './android-chrome-512x512.png'
 ];
 
 // التثبيت وحفظ الملفات في الكاش
