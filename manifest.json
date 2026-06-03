@@ -1,0 +1,18 @@
+{
+  "name": "مستهدف المليون",
+  "short_name": "مليون ل.س",
+  "description": "تطبيق لتتبع هدف تأمين مليون ليرة سورية",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme-color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
